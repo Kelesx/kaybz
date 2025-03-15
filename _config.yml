@@ -1,1 +1,2 @@
 title: KayBeazy Blog
+plugins: -jekyll-redirect-from
