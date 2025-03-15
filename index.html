@@ -5,5 +5,14 @@
 </head>
 <body>
 <h1>Welcome to my website</h1>
+  <!-- index.html -->
+<h1>Welcome to my website!</h1>
+<ul>
+  {% for file in site.pages %}
+    {% if file.path contains 'pages/' %}
+      <li><a href="{{ file.url }}">{{ file.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
 </body>
 </html>
