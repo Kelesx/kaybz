@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>KayBeazy Blog</title>
-</head>
-<body>
-<h1>Welcome to my site</h1>
-<ul>
-  {% for file in site.pages %}
-    {% if file.path contains 'pages/' %}
-      <li><a href="{{ file.url }}">{{ file.title }}</a></li>
-    {% endif %}
-  {% endfor %}
-</ul>
-</body>
-</html>
+---
+layout: default
+title: Welcome to my page 🤗 
+---
