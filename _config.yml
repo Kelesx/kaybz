@@ -1,7 +1,0 @@
-title: KayBeazy Blog
-plugins:
-  - jekyll-redirect-from
-
-jekyll-redirect-from:
-  default_status: 301
-  
