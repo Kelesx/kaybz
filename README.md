@@ -1,2 +1,0 @@
-# kaybz
-Hey welcome aiit 👋 
