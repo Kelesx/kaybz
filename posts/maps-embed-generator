@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Embed Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        #mapPreview iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Google Maps Embed Generator</h1>
+    <form id="mapForm">
+        <input type="text" id="address" placeholder="Enter Address" required>
+        <button type="submit">Generate Embed Code</button>
+    </form>
+
+    <h2>Generated Embed Code:</h2>
+    <textarea id="embedCode" rows="4" cols="50" readonly></textarea>
+
+    <h2>Preview:</h2>
+    <div id="mapPreview"></div>
+
+    <script>
+        document.getElementById('mapForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            const address = document.getElementById('address').value.trim();
+            if (address === "") return;
+            
+            const mapURL = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
+            const embedCode = `<iframe src="${mapURL}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
+            
+            document.getElementById('embedCode').value = embedCode;
+            document.getElementById('mapPreview').innerHTML = embedCode;
+        });
+    </script>
+</body>
+</html>
